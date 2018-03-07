@@ -1,0 +1,14 @@
+{
+  "name": "boom",
+  "version": "1.0.0",
+  "description": "error handling with boom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-boom-error": "^0.1.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "servercreation",
+  "version": "1.0.0",
+  "description": "with and without ssl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shivani",
+  "license": "ISC",
+  "dependencies": {
+    "https": "^1.0.0"
+  }
+}
