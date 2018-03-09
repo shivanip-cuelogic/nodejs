@@ -1,7 +1,7 @@
 var express = require('express');
 var app= express();
 
-app.serverCreate()
+app.createServer();
 /////////////////////index creation//////////////////////
 var mongoIndex = function(db,callback){
     var collection= db.collection('userinfo');

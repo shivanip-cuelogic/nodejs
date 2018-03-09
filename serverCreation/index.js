@@ -1,20 +1,24 @@
 var https = require('https');
 var fs = require('fs');
- 
-var options=({
-    key:fs.readFileSync('domain.key').toString(),
-    cert:fs.readFileSync('domain.csr').toString()
-})
+var express = require('express');
+var app = express(); 
+var options = {
+    key: fs.readFileSync('./key.pem', 'utf8'),
+    cert: fs.readFileSync('./server.crt', 'utf8')
+    };
 
 
 
 https.createServer(options,function(request,response){
-    response.writeHead(200);
-    response.write("bfshddjksfhkdj");
-    response.end("hello");
+    //response.send("hello");
 
-}).listen(8080);
+}).listen(3000);
 
-console.log("listening to port 8080");
+app.post('/about',function(req,res){
+    res.send("hello");
+}
+);
+
+console.log("listening to port 3000");
 
 

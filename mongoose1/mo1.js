@@ -130,7 +130,19 @@ app.use(bodyparser.urlencoded({extended:false}));
 });
 
 //delete user
+/////////////////////index creation//////////////////////
+var mongoIndex = function(db,callback){
+    var collection= db.collection('userinfo');
+    collection.createIndex(
+        {name:1},function(err,result){
+            if(err)
+            throw err;
+            else
+            console.log("Index created successfully");
+        }
+    );
 
+};
 app.post('/delete',function(req,res){
     Schema.remove({name:req.body.username},function(err,result){
         if(err)
@@ -148,19 +160,7 @@ app.post('/delete',function(req,res){
     });
 });
 
-/////////////////////index creation//////////////////////
-var mongoIndex = function(db,callback){
-    var collection= db.collection('userinfo');
-    collection.createIndex(
-        {name:1},function(err,result){
-            if(err)
-            throw err;
-            else
-            console.log("Index created successfully");
-        }
-    );
 
-};
 
 
 
